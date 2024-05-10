@@ -16,7 +16,7 @@ export const OrderStatus = () => {
   useEffect(() => {
     const fetchOrders = () => {
       axios
-        .get("https://ecommerceapis-ro84.onrender.com/api/admin/orders")
+        .get("https://project3-be.onrender.com/api/admin/orders")
         .then((response) => {
           const sortedOrders = response.data.sort((a, b) => {
             return a.shipped === b.shipped ? 0 : a.shipped ? 1 : -1;
@@ -38,7 +38,7 @@ export const OrderStatus = () => {
   const handleMarkAsShipped = (orderId) => {
     axios
       .put(
-        `https://ecommerceapis-ro84.onrender.com/api/admin/orders/${orderId}/ship`
+        `https://project3-be.onrender.com/api/admin/orders/${orderId}/ship`
       )
       .then((response) => {
         const updatedOrders = orders
